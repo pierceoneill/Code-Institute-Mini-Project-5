@@ -1,36 +1,5 @@
-{% extends 'base.html' %}
-
-{% block title %}
-    Django E-commerce | {{ user }}'s Profile
-{% endblock %}
-
-{% block header %}
-    {{ user }}'s Profile
-{% endblock %}
-
-{% block search %}
-{% endblock %}
-
+{% extends "base.html" %}
 {% block content %}
-<div class="row text-center">
-    <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h4>Your profile information is below. When you're done here, you can <a href="{% url 'index' %}">head home</a>.</h4>
-        <div id="profile-table-container">
-            <table class="table">
-                <thead>
-                    <tr class="info">
-                        <th class="text-center">Username</th>
-                        <th class="text-center">Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="info">
-                        <td>{{ request.user }}</td>
-                        <td>{{ request.user.email }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+    <h2>Success!</h2>
+    <p>You are logged in as {{ user.email }} </p>
 {% endblock %}

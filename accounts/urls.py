@@ -1,12 +1,11 @@
-from django.contrib import admin
-from django.urls import path, include
-from .views import index, logout, login, registration, profile
+from django.conf.urls import url, include
 from . import urls_reset
+from .views import index, register, profile, logout, login
 
 urlpatterns = [
-    path('logout/', logout, name='logout'),
-    path('login/', login, name='login'),
-    path('registration/', registration, name='registration'),
-    path('profile/', profile, name='profile'),
-    path('password-reset/', include(urls_reset)),
+    url(r'^register/$', register, name='register'),
+    url(r'^profile/$', profile, name='profile'),
+    url(r'^logout/$', logout, name='logout'),
+    url(r'^login/$', login, name='login'),
+    url(r'^password-reset/', include(urls_reset)),
 ]
