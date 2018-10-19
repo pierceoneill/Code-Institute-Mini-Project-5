@@ -62,25 +62,16 @@
     </header>
     
     <div class="container">
-        {% if messages %}
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+         {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
                 {% for message in messages %}
-                        <div class="alert alert-danger">            
-                    {% if message.tags == 'error' %}
-                        <div class="alert alert-success">
-                    {% elif message.tags == 'success' %}
-                        <div class="alert alert-warning">
-                    {% else %}
-                        <div class="messages">
-                    {% endif %}
-                        
-                            {{ message }}
-                        </div>
-                    </div>
+                    {{ message }}
                 {% endfor %}
             </div>
         </div>
+    {% endif %}
+
         {% endif %}
         {% block search %}
         <div class="row">
